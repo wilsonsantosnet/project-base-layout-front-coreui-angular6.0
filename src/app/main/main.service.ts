@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Observer ,  Subject } from 'rxjs';
+import { Observable, Observer, Subject } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
 
 //import { ApiService } from 'app/common/services/api.service';
@@ -13,47 +13,48 @@ import { GlobalServiceCulture, Translated, TranslatedField } from '../global.ser
 export class MainService extends ServiceBase {
 
 
-    constructor(private globalServiceCulture: GlobalServiceCulture, private api: ApiService<any>) {
-        super();
-    }
+  constructor(private globalServiceCulture: GlobalServiceCulture, private api: ApiService<any>) {
+    super();
+  }
 
-    updateCulture(vm: any, culture: string = null) {
-        this.getInfosTranslated(this.globalServiceCulture.defineCulture(culture)).then((result: any) => {
-            vm.generalInfo = result;
-        });
-    }
+  updateCulture(vm: any, culture: string = null) {
+    this.getInfosTranslated(this.globalServiceCulture.defineCulture(culture)).then((result: any) => {
+      vm.generalInfo = result;
+    });
+  }
 
-    resetCulture() {
-        this.globalServiceCulture.reset();
-    }
+  resetCulture() {
+    this.globalServiceCulture.reset();
+  }
 
-    getInfosTranslated(culture: string) {
-        return this.globalServiceCulture.getInfosTranslatedStrategy('Geral', culture, this.getInfos(), []);
-    }
+  getInfosTranslated(culture: string) {
+    return this.globalServiceCulture.getInfosTranslatedStrategy('Geral', culture, this.getInfos(), []);
+  }
 
-    getInfos() {
-        return this.getInfosFields();
-    }
+  getInfos() {
+    return this.getInfosFields();
+  }
 
-    getInfosFields() {
-        return {
-            buscar: { label: 'Buscar' },
-            voltar: { label: 'Voltar' },
-            sair: { label: 'Sair' },
-            filtro: { label: 'Filtros' },
-            novoItem: { label: 'Novo item' },
-            titulo: { label: 'Titulo' },
-            acao: { label: 'AÃ§Ã£o' },
-            totalRegistro: { label: 'Total de registros' },
-            proximo: { label: 'PrÃ³ximo' },
-            anterior: { label: 'Anterior' },
-            filtrar: { label: 'Filtrar' },
-            salvar: { label: 'Salvar' },
-            cancelar: { label: 'Cancelar' },
-            sim: { label: 'Ok' },
-            imprimir: { label: 'Imprimir' },
-            procurar: { label: 'Procurar' },
-            excluir: { label: 'Excluir' },
-        }
+  getInfosFields() {
+    return {
+      buscar: { label: 'Buscar' },
+      voltar: { label: 'Voltar' },
+      sair: { label: 'Sair' },
+      filtro: { label: 'Filtros' },
+      novoItem: { label: 'Novo item' },
+      titulo: { label: 'Titulo' },
+      acao: { label: 'AÃ§Ã£o' },
+      totalRegistro: { label: 'Total de registros' },
+      proximo: { label: 'PrÃ³ximo' },
+      anterior: { label: 'Anterior' },
+      filtrar: { label: 'Filtrar' },
+      salvar: { label: 'Salvar' },
+      cancelar: { label: 'Cancelar' },
+      sim: { label: 'Ok' },
+      imprimir: { label: 'Imprimir' },
+      procurar: { label: 'Procurar' },
+      excluir: { label: 'Excluir' },
+      limpar: { label: 'Limpar' },
     }
+  }
 }

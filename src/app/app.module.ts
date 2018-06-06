@@ -10,24 +10,37 @@ import { AuthService } from './common/services/auth.service';
 import { ApiService } from './common/services/api.service';
 import { ServiceBase } from './common/services/service.base';
 import { LoadingComponent } from './common/components/loading.component';
-import { MenuAsideComponent } from './common/components/menu-aside.component';
-import { MenuTopComponent } from './common/components/menu-top.component';
-import { FooterComponent } from './common/components/footer.component';
+import { MenuComponent } from './common/components/menu.component';
 import { AuthGuard } from './common/services/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { MainService } from './main/main.service';
-import { SimpleNotificationsModule } from 'angular2-notifications';
 import { AppComponent } from './app.component';
-import { RoutingDefault } from './app.routing';
-import { RoutingCustom } from './app.custom.routing';
-import { PopoverModule } from 'ngx-bootstrap/popover';
-import { ModalModule } from 'ngx-bootstrap/modal';
+import { AvatarComponent } from './common/components/avatar.component';
+import { SidebarToggleDirective } from './common/directives/sidebar.directive';
+import { AsidebarToggleDirective } from './common/directives/asidebar.directive';
+
 import { GlobalServiceCulture } from './global.service.culture';
 import { StartupService } from './startup.service';
 
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+
+import { AppAsideModule, AppBreadcrumbModule, AppHeaderModule, AppFooterModule, AppSidebarModule, } from '@coreui/angular'
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+
+
+import { RoutingDefault } from './app.routing';
+import { RoutingCustom } from './app.custom.routing';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
+
+
 registerLocaleData(ptBr)
 
 
@@ -38,14 +51,14 @@ export function startupServiceFactory(startupService: StartupService): Function 
 @NgModule({
   declarations: [
     AppComponent,
+    AvatarComponent,
     MainComponent,
     LoginComponent,
     LoadingComponent,
     ConfirmModalComponent,
-    MenuAsideComponent,
-    MenuTopComponent,
-    FooterComponent,
-    
+    MenuComponent,
+    SidebarToggleDirective,
+    AsidebarToggleDirective
   ],
   imports: [
     BrowserModule,
@@ -54,10 +67,16 @@ export function startupServiceFactory(startupService: StartupService): Function 
     HttpModule,
     RoutingDefault,
     RoutingCustom,
-    SimpleNotificationsModule.forRoot(),
+    AppAsideModule,
+    AppFooterModule,
+    AppHeaderModule,
+    AppBreadcrumbModule.forRoot(),
+    AppSidebarModule,
+    PerfectScrollbarModule,
     ModalModule.forRoot(),
-    PopoverModule.forRoot()
-    
+    PopoverModule.forRoot(),
+    SimpleNotificationsModule.forRoot(),
+    TabsModule.forRoot(),
   ],
   providers: [
     HttpModule,

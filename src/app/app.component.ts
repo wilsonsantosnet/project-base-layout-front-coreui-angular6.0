@@ -1,9 +1,9 @@
-﻿import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from './common/services/auth.service';
 //import { AuthService } from 'app/common/services/auth.service'
 
 @Component({
-    selector: 'app-root',
+    selector: 'body',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })

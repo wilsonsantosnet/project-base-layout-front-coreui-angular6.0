@@ -23,12 +23,13 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/jquery-datetimepicker/jquery.datetimepicker.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/font-awesome/css/font-awesome.min.css",
-              "node_modules/select2/dist/css/select2.min.css",
-              "src/assets/css/main.css",
-              "src/assets/css/app.css"
+              "./node_modules/jquery-datetimepicker/jquery.datetimepicker.css",
+              "./node_modules/font-awesome/css/font-awesome.min.css",
+              "./node_modules/simple-line-icons/css/simple-line-icons.css",
+              "./node_modules/@coreui/icons/css/coreui-icons.css",
+              "./node_modules/flag-icon-css/css/flag-icon.css",
+              "./node_modules/select2/dist/css/select2.min.css",
+              "src/assets/scss/style.scss"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
@@ -135,5 +136,14 @@
       }
     }
   },
-  "defaultProject": "seed2"
+  "defaultProject": "seed2",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "styleext": "scss"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
+    }
+  }
 }
