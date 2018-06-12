@@ -5,12 +5,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import { ConfirmModalComponent } from './common/components/confirm-modal.component';
+
 import { AuthService } from './common/services/auth.service';
 import { ApiService } from './common/services/api.service';
 import { ServiceBase } from './common/services/service.base';
+
+import { ConfirmModalComponent } from './common/components/confirm-modal.component';
 import { LoadingComponent } from './common/components/loading.component';
+import { LoadingTopComponent } from './common/components/loading-top.component';
 import { MenuComponent } from './common/components/menu.component';
+
+
 import { AuthGuard } from './common/services/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
@@ -57,6 +62,7 @@ export function startupServiceFactory(startupService: StartupService): Function 
     LoadingComponent,
     ConfirmModalComponent,
     MenuComponent,
+    LoadingTopComponent,
     SidebarToggleDirective,
     AsidebarToggleDirective
   ],
