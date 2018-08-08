@@ -44,6 +44,7 @@ import { RoutingDefault } from './app.routing';
 import { RoutingCustom } from './app.custom.routing';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 
 
 registerLocaleData(ptBr)
@@ -59,6 +60,7 @@ export function startupServiceFactory(startupService: StartupService): Function 
     AvatarComponent,
     MainComponent,
     LoginComponent,
+    UnauthorizedComponent,
     LoadingComponent,
     ConfirmModalComponent,
     MenuComponent,
