@@ -57,13 +57,7 @@ export class MainComponent implements OnInit {
         }
 
         if (result.claims.tools != null) {
-          this.vm.menu = JSON.parse(result.claims.tools).filter((item) => { return item.Type == 1 }).map((item) => {
-            return {
-              name: item.Name,
-              url: item.Route,
-              icon: item.Icon
-            }
-          });
+          this.vm.menu = this.mainService.transformTools(result.claims.tools);
         }
 
         if (result.claims.avatar != null) {

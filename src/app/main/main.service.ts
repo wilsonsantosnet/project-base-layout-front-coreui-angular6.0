@@ -57,4 +57,55 @@ export class MainService extends ServiceBase {
       limpar: { label: 'Limpar' },
     }
   }
+
+  transformTools(tools: any) {
+
+    var source = JSON.parse(tools).filter((item) => { return item.Type == 1 });
+
+    var parentItems = source.filter((item) => {
+      return item.ParentKey == "" || !item.ParentKey
+    }).map((item) => {
+      return {
+        name: item.Name,
+        url: item.Route,
+        icon: item.Icon,
+        key: item.Key,
+        parentkey: item.ParentKey
+      }
+    });
+
+    var childrenItems = source.filter((item) => {
+      return item.ParentKey != ""
+    }).map((item) => {
+      return {
+        name: item.Name,
+        url: item.Route,
+        icon: item.Icon,
+        parentkey: item.ParentKey
+      }
+    });
+
+    console.log("transformTools", source, parentItems, childrenItems);
+
+    return parentItems.map((parentItem) => {
+
+      var children = childrenItems.filter((childrenItem) => {
+        return parentItem.key == childrenItem.parentkey
+      });
+
+      if (children && children.length == 0) {
+        children = null;
+      }
+
+      return {
+        name: parentItem.name,
+        url: parentItem.url,
+        icon: parentItem.icon,
+        parentkey: parentItem.parentkey,
+        children: children
+      }
+
+    });
+
+  }
 }
