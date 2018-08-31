@@ -42,6 +42,8 @@ export class MainService extends ServiceBase {
       sair: { label: 'Sair' },
       filtro: { label: 'Filtros' },
       novoItem: { label: 'Novo item' },
+      editarItem: { label: 'Editar item' },
+      abrir: { label: 'Abrir' },
       titulo: { label: 'Titulo' },
       acao: { label: 'AÃ§Ã£o' },
       totalRegistro: { label: 'Total de registros' },
