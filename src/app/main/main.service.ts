@@ -57,6 +57,7 @@ export class MainService extends ServiceBase {
       procurar: { label: 'Procurar' },
       excluir: { label: 'Excluir' },
       limpar: { label: 'Limpar' },
+      importar: { label: 'Importar' },
     }
   }
 
