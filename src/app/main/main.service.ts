@@ -37,6 +37,7 @@ export class MainService extends ServiceBase {
 
   getInfosFields() {
     return {
+      nova: { label: 'Nova' },
       buscar: { label: 'Buscar' },
       voltar: { label: 'Voltar' },
       sair: { label: 'Sair' },
