@@ -74,7 +74,8 @@ export class MainService extends ServiceBase {
         url: item.Route,
         icon: item.Icon,
         key: item.Key,
-        parentkey: item.ParentKey
+        parentkey: item.ParentKey,
+        title: item.Title,
       }
     });
 
@@ -85,31 +86,42 @@ export class MainService extends ServiceBase {
         name: item.Name,
         url: item.Route,
         icon: item.Icon,
-        parentkey: item.ParentKey
+        parentkey: item.ParentKey,
+        title: item.Title,
       }
     });
 
-    console.log("transformTools", source, parentItems, childrenItems);
-
-    return parentItems.map((parentItem) => {
+    var tools = parentItems.map((parentItem) => {
 
       var children = childrenItems.filter((childrenItem) => {
         return parentItem.key == childrenItem.parentkey
       });
 
-      if (children && children.length == 0) {
-        children = null;
+      if (parentItem.title) {
+        return {
+          title: true,
+          name: parentItem.name
+        }
+      }
+
+      if (children && children.length > 0) {
+        return {
+          name: parentItem.name,
+          url: parentItem.url ? parentItem.url : "/" + parentItem.name,
+          icon: parentItem.icon,
+          children: children
+        }
       }
 
       return {
         name: parentItem.name,
         url: parentItem.url,
         icon: parentItem.icon,
-        parentkey: parentItem.parentkey,
-        children: children
       }
 
     });
+ 
+    return tools;
 
   }
 }
