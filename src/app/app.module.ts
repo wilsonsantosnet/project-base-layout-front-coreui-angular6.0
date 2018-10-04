@@ -38,7 +38,7 @@ import { PopoverModule } from 'ngx-bootstrap/popover';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { SimpleNotificationsModule } from 'angular2-notifications';
-
+import { EEnumService } from './util/enum/enum.service';
 
 import { RoutingDefault } from './app.routing';
 import { RoutingCustom } from './app.custom.routing';
@@ -105,6 +105,7 @@ export function startupServiceFactory(startupService: StartupService): Function 
     MainService,
     ServiceBase,
     GlobalServiceCulture,
+    EEnumService
 
   ],
   bootstrap: [AppComponent]
