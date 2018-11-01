@@ -45,7 +45,7 @@ import { RoutingCustom } from './app.custom.routing';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
-
+import { MessageModalComponent } from './common/components/message-modal.component';
 
 registerLocaleData(ptBr)
 
@@ -63,6 +63,7 @@ export function startupServiceFactory(startupService: StartupService): Function 
     UnauthorizedComponent,
     LoadingComponent,
     ConfirmModalComponent,
+    MessageModalComponent,
     MenuComponent,
     LoadingTopComponent,
     SidebarToggleDirective,
