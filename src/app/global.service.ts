@@ -10,6 +10,9 @@ export class GlobalService {
     static notification = new EventEmitter<NotificationParameters>();
     static changeCulture = new EventEmitter<string>();
 
+    public static messageShow(message:string) {
+        GlobalService.getOperationExecutedEmitter().emit(GlobalService.operationExecutedParameters("message-modal", null, message));
+    }
 
     public static getNotificationEmitter() {
 
