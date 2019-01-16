@@ -171,6 +171,7 @@ export class AuthSettings {
     public TYPE_LOGIN: string;
     public CLIENT_ID: string;
     public CLIENT_ID_RO: string;
+    public CLIENT_ID_CC: string;
     public SCOPE: string;
     public CACHE_TYPE: ECacheType;
 
@@ -184,6 +185,7 @@ export class AuthSettings {
         this.TYPE_LOGIN = "SSO";
         this.CLIENT_ID = 'Seed-spa';
         this.CLIENT_ID_RO = 'Seed-spa';
+        this.CLIENT_ID_CC = 'Seed-spa';
         this.SCOPE = "openid ssosa profile email";
         this.CACHE_TYPE = ECacheType.LOCAL;
     }
