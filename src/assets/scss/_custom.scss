@@ -49,3 +49,43 @@ select.ng-invalid + .select2-container .select2-selection {
   border: 2px dashed;
   text-align: center;
 }
+
+
+
+@media (max-width: 575.98px) {
+  .hidden-xs {
+    display: none;
+  }
+}
+
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hidden-sm {
+    display: none;
+  }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hidden-md {
+    display: none;
+  }
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hidden-lg {
+    display: none;
+  }
+}
+
+
+
+@media (min-width: 1200px) {
+  .hidden-xl {
+    display: none;
+  }
+}
