@@ -1,25 +1,20 @@
-<header class="app-header navbar">
-  <a class="navbar-brand" href="#">
-    <img class="navbar-brand-full" src="assets/img/logo.png" width="89" height="25" alt="Logo">
-    <img class="navbar-brand-minimized" src="assets/img/logo.png" width="30" height="30" alt="Logo">
-  </a>
-  <ul class="nav navbar-nav mr-auto d-md-down-none">
-    <li class="nav-item">
-      <a class="nav-link navbar-toggler" href="#" appSidebarToggler>&#9776;</a>
-    </li>
-  </ul>
-  <ul class="nav navbar-nav ml-auto">
-    <li class="nav-item dropdown" dropdown placement="bottom right">
-      <app-avatar [folderAvatar]="'usuario'" [vm]='vm'></app-avatar>
-    </li>
-    <li class="nav-item d-md-down-none">
-      <a class="btn" title="Sair" (click)="onLogout($event)">
-        <span class="fa fa-sign-out" aria-hidden="true"></span> Sair
-      </a>
-    </li>
-  </ul>
-  <button class="navbar-toggler d-md-down-none" type="button" appAsidebarToggler><span class="navbar-toggler-icon"></span></button>
-</header>
+<app-header [navbarBrandRouterLink]="['/home']"
+            [fixed]="true"
+            [navbarBrandFull]="{src: 'assets/img/logo.png', width: 150, height: 40, alt: 'Church Service'}"
+            [navbarBrandMinimized]="{src: 'assets/img/logo_sm.png', width: 40, height: 40, alt: 'Church Service'}"
+            [sidebarToggler]="'lg'">
+            <ul class="nav navbar-nav ml-auto">
+              <li class="nav-item dropdown" dropdown placement="bottom right">
+                <span class="hidden-xs mr-1">{{vm.userName}}</span>
+                <a routerLink="/profile" title="Meu perfil">
+                  <app-avatar [folderAvatar]="'usuario'" [vm]='vm'></app-avatar>
+                </a>
+                <a class="btn" title="Sair" (click)="onLogout($event)">
+                  <span class="fa fa-sign-out" aria-hidden="true"></span> Sair
+                </a>
+              </li>
+            </ul>
+</app-header>
 
 
 <div class="app-body">
