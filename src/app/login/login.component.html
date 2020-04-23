@@ -1,4 +1,4 @@
-<div class="container-fluid" *ngIf="typeLogin!='SSO'">
+<div class="container-fluid" *ngIf="typeLogin==ETypeLogin.ResourceOwner">
   <div class="card">
     <div class="card-header">
       <div class="well"><img src="../../../assets/img/logo.png" /></div>
@@ -27,7 +27,7 @@
     </div>
   </div>
 </div>
-<div class="container-fluid" *ngIf="typeLogin=='SSO'">
+<div class="container-fluid" *ngIf="typeLogin==ETypeLogin.SSO || typeLogin==ETypeLogin.Anonymous">
   <div class="card">
     <div class="card-block">
       <div class="well"><img src="../../../assets/img/logo.png" /></div>
