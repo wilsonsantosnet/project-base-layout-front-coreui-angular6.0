@@ -186,7 +186,7 @@ export class AuthSettings {
   }
 
   constructor() {
-    this.TYPE_LOGIN = ETypeLogin.Anonymous;
+    this.TYPE_LOGIN = ETypeLogin.SSO;
     this.CLIENT_ID = 'Seed-spa-custom';
     this.CLIENT_ID_RO = 'Seed-spa-custom';
     this.CLIENT_ID_CC = 'Seed-spa-custom';
