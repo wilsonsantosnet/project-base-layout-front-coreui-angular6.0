@@ -6,9 +6,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 	imports: [
 		CommonModule,
 		FormsModule,
+    RouterModule.forChild([])
 	],
   declarations: [],
-  exports: []
+  exports: [RouterModule]
 })
 export class UtilSharedModule {
 
