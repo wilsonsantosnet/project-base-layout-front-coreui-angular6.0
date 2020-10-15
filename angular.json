@@ -50,7 +50,8 @@
               "./node_modules/tinymce/plugins/table/plugin.js",
               "./node_modules/tinymce/plugins/code/plugin.js",
               "./node_modules/tinymce/plugins/fullscreen/plugin.js",
-              "src/assets/jquery.nestable.js"
+              "src/assets/jquery.nestable.js",
+              "src/assets/moip2.8.1.mim.js"
             ]
           },
           "configurations": {
